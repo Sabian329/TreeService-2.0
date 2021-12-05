@@ -1,11 +1,12 @@
 import { Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import { ShortInfoWrapper } from "../../components/shortInfoWrapper";
 import { SlideShow } from "../../components/slideShow";
 import { Wrapper } from "./styled";
 
 export const MainView = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <motion.div animate={{ opacity: [0, 1] }}>
       <Wrapper>

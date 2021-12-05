@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import { MobileBaner } from "../../components/mobileBaner";
 import { WhoAreWrapper } from "../../components/whoAreWrapper";
 import { device } from "../../theme/MediaQueries";
 
 export const AboutView = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <motion.div animate={{ opacity: [0, 1] }}>
       <Wrapper>

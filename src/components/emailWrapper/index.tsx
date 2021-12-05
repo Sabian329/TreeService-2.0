@@ -1,19 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Correct, DeliveredText, HeadingStyled, Wrapper } from "./styled";
+import { Correct, DeliveredText, Submit, TextInput, Wrapper } from "./styled";
 import emailjs from "emailjs-com";
-import { Input } from "@chakra-ui/input";
 import { Textarea } from "@chakra-ui/textarea";
 import { MailData } from "../../constans/mailjs";
-import { Text } from "@chakra-ui/layout";
+import { Heading, Text } from "@chakra-ui/layout";
 import { Button, ButtonGroup } from "@chakra-ui/button";
 import { motion, useAnimation } from "framer-motion";
 
 export const EmailWrapper = () => {
   const form = useRef<any>();
-  const nameInput = useRef<any>();
-  const emailInput = useRef<any>(null);
-  const textInput = useRef<any>(null);
-  const [isSending, setIsSending] = useState(false);
+  const nameInput = useRef<HTMLInputElement | null>(null);
+  const emailInput = useRef<HTMLInputElement | null>(null);
+  const textInput = useRef<HTMLTextAreaElement | null>(null);
   const [isSend, setIsSend] = useState(false);
   const [isButtonsActive, setIsButtonsActive] = useState(true);
   const controls = useAnimation();
@@ -22,8 +20,9 @@ export const EmailWrapper = () => {
     isSend ? controls.start("start") : controls.start("stop");
   }, [controls, isSend]);
 
-  const sendEmail = () => {
-    setIsSending(true);
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     emailjs
       .sendForm(
         MailData.YOUR_SERVICE_ID,
@@ -33,7 +32,6 @@ export const EmailWrapper = () => {
       )
       .then(
         (result) => {
-          result.status === 200 ? setIsSending(false) : setIsSending(true);
           result.status === 200 && setIsSend(true);
           result.status === 200 && setIsButtonsActive(false);
           console.log(result.status);
@@ -67,44 +65,42 @@ export const EmailWrapper = () => {
         )}
         {isButtonsActive ? (
           <>
-            <HeadingStyled>napisz do nas</HeadingStyled>
+            <Heading>Napisz do nas</Heading>
             <form ref={form} onSubmit={sendEmail}>
               <label>
                 <Text>Imię</Text>
+                <TextInput
+                  required
+                  ref={nameInput}
+                  type="text"
+                  name="from_name"
+                />
               </label>
-              <Input required ref={nameInput} type="text" name="from_name" />
               <label>
                 <Text>Email</Text>
+                <TextInput
+                  required
+                  ref={emailInput}
+                  type="email"
+                  name="user_email"
+                />
               </label>
-              <Input required ref={emailInput} type="email" name="user_email" />
               <label>
                 <Text>Wiadomość</Text>
+                <Textarea required ref={textInput} name="message" />
               </label>
-              <Textarea required ref={textInput} name="message" />
-
               <ButtonGroup>
-                <Button
-                  type="submit"
-                  value=""
-                  fontWeight="400"
-                  isLoading={isSending}
-                  bg="#008000"
-                >
-                  wyślij
+                <Submit type="submit" value="wyślij" />
+                <Button type="reset" value="" fontWeight="400" bg="#6C63FF">
+                  reset
                 </Button>
-
-                <div onClick={() => setIsSending(false)}>
-                  <Button type="reset" value="" fontWeight="400" bg="#008000">
-                    reset
-                  </Button>
-                </div>
               </ButtonGroup>
             </form>
           </>
         ) : (
           <>
-            <HeadingStyled>Dziękujemy !</HeadingStyled>
-            <DeliveredText>Twoja wiadomość została wysłana</DeliveredText>
+            <Heading>Dziękujemy !</Heading>
+            <DeliveredText>towoja wiadomosć została dostarczona</DeliveredText>
           </>
         )}
       </Wrapper>

@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useEffect } from "react";
 import { MobileBaner } from "../../components/mobileBaner";
 import { PartnerWrapper } from "../../components/partnerWrapper";
 import { device } from "../../theme/MediaQueries";
 
 export const PartnersView = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <Wrapper>
       <MobileBaner />

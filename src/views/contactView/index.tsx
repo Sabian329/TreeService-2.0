@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useEffect } from "react";
 import { ContactWrapper } from "../../components/contactWrapper";
 import { device } from "../../theme/MediaQueries";
 
 export const ContactView = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <Wrapper>
       <ContactWrapper />

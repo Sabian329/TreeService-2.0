@@ -5,15 +5,19 @@ import phone from "../../assets/phone.svg";
 import email from "../../assets/email.svg";
 import pin from "../../assets/pin.svg";
 import { EmailWrapper } from "../emailWrapper";
+import { MobileBaner } from "../mobileBaner";
+import { Heading } from "@chakra-ui/layout";
 
 export const ContactWrapper = () => {
   return (
     <>
+      <MobileBaner />
       <motion.div animate={{ opacity: [0, 1] }}>
         <Wrapper>
           <HeadingStyled>Kontakt</HeadingStyled>
           <First>
             <TableWrapper>
+              <Heading>Jesteśmy gotowi do działania 24/7</Heading>
               <table>
                 <colgroup>
                   <col />

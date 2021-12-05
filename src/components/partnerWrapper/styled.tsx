@@ -36,29 +36,27 @@ export const First = styled.article`
   width: 65rem;
   max-width: ${size.laptop};
   border-radius: 10px;
+  margin-bottom: 2rem;
+  @media ${device.laptop} {
+    width: 30rem;
+    flex-direction: column;
+  }
+  @media ${device.mobileL} {
+    width: 100vw;
+    border-radius: unset;
+  }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: justify;
     margin: 1rem 2rem 1rem 2rem;
   }
   img {
-    height: 20rem;
+    height: 19rem;
     border-radius: 0 10px 10px 0;
     @media ${device.laptop} {
       height: unset;
       border-radius: 0 0 10px 10px;
-    }
-
-    @media ${device.laptop} {
-      width: 30rem;
-      flex-direction: column;
-    }
-    @media ${device.mobileL} {
-      width: 100vw;
-    }
-    @media ${device.mobileL} {
-      border-radius: unset;
     }
     @media ${device.mobileL} {
       border-radius: unset;

@@ -1,39 +1,39 @@
-import { Heading } from "@chakra-ui/layout";
+import { Input } from "@chakra-ui/input";
 import styled from "@emotion/styled";
-import { device } from "../../theme/MediaQueries";
+import { device, size } from "../../theme/MediaQueries";
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
-  background-color: #8d8c8c;
-  color: #000000;
-  border-radius: 10px;
   width: 22rem;
-  margin-top: 2rem;
+  height: 35rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  max-width: ${size.laptop};
+  background-color: #c7c7c7ce;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
   @media ${device.mobileL} {
-    width: 19rem;
+    width: 100%;
     margin: 4rem 0 0 0;
   }
   button {
+    background-color: #008000;
     color: #ffffff;
-  }
-  img {
-    width: 10rem;
   }
   textArea {
     background-color: #ffffff;
     margin: 0 0 1rem 0;
+    color: #000000;
   }
-  input {
-    background-color: #ffffff;
-  }
+
   h2 {
-  }
-  p {
-    padding: 0.5rem;
-    color: #ffffff;
+    font-weight: 300;
+    text-align: center;
+    font-size: 2rem;
   }
 `;
 export const DeliveredText = styled.p`
@@ -53,11 +53,17 @@ export const Correct = styled.div`
     width: 2rem;
   }
 `;
-export const HeadingStyled = styled(Heading)`
-  font-weight: 300;
-  text-align: center;
-  font-size: 2rem;
+export const TextInput = styled(Input)`
+  background-color: white;
+`;
+
+export const Submit = styled(Input)`
+  background-color: #008000;
+  border: none;
   color: white;
-  width: unset;
-  background-color: unset;
+  :hover {
+    background-color: #dddddd;
+    color: white;
+    cursor: pointer;
+  }
 `;

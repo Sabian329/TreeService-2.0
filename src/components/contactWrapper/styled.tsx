@@ -9,40 +9,57 @@ export const Wrapper = styled.div`
   flex-direction: column;
   color: white;
   max-width: ${size.laptop};
-
- \
-    
 `;
 export const First = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  /* background-color: #3f3f3f0; */
   align-items: center;
   width: 65rem;
   max-width: ${size.laptop};
   border-radius: 10px;
+  margin-bottom: 5rem;
 
   p {
     font-size: 1.2rem;
     text-align: justify;
     margin: 1rem 2rem 1rem 2rem;
   }
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
 `;
 
 export const TableWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: ;
+  flex-direction: column;
   width: 22rem;
-  height: 12rem;
+  height: 35rem;
   padding: 0 1rem 0 1rem;
   background-color: #008000;
   border-radius: 10px;
-  @media ${device.mobileL} {
+  position: relative;
+  @media ${device.laptop} {
+    height: auto;
     padding: 2rem;
   }
+  @media ${device.mobileL} {
+    width: 100vw;
+    border-radius: unset;
+  }
 
+  h2 {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    left: 0;
+    font-weight: 300;
+    text-align: center;
+    @media ${device.laptop} {
+      position: unset;
+    }
+  }
   table {
     margin: 0 auto;
     height: 10rem;

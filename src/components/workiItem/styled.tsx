@@ -84,6 +84,7 @@ export const ModalContentStyled = styled(ModalContent)`
   max-width: 60vw;
   border-radius: 12px;
   @media ${device.mobileL} {
+    max-width: 100vw;
     width: 100vw;
   } ;
 `;
