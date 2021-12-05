@@ -8,7 +8,7 @@ import { Button, ButtonGroup } from "@chakra-ui/button";
 import { motion, useAnimation } from "framer-motion";
 
 export const EmailWrapper = () => {
-  const form = useRef<HTMLFormElement | null>(null);
+  const form = useRef<any>();
   const nameInput = useRef<HTMLInputElement | null>(null);
   const emailInput = useRef<HTMLInputElement | null>(null);
   const textInput = useRef<HTMLTextAreaElement | null>(null);
