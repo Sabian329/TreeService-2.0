@@ -6,7 +6,29 @@ import { Baner, ExampleContainer } from "./styled";
 import { Heading, Text } from "@chakra-ui/react";
 import { images } from "../../constans/images";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { sliderVariants } from "../../constans/animationsVariants";
+
+const variants = {
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      duration: 2,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      duration: 2,
+    };
+  },
+};
 
 export const SlideShow = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -53,7 +75,7 @@ export const SlideShow = () => {
               key={page}
               src={images[imageIndex]}
               custom={direction}
-              variants={sliderVariants}
+              variants={variants}
               initial="enter"
               animate="center"
               exit="exit"

@@ -1,5 +1,5 @@
 import React from "react";
-import { ShortInfo } from "../../constans/shortInfo";
+import { ShortInfo } from "../../constans/ShortInfo";
 import { ShortInfoItem } from "../shortInfoItem";
 import { Wrapper } from "./styled";
 

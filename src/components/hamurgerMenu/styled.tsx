@@ -13,7 +13,6 @@ export const IconWrapper = styled.nav`
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  padding: 0 0.8rem 0 0.8rem;
   top: 0;
   right: 0;
   z-index: 2002;
