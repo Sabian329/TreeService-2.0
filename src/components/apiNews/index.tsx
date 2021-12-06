@@ -3,40 +3,24 @@ import { Heading } from "@chakra-ui/layout";
 import { motion } from "framer-motion";
 import { NewsItem } from "../newsItem";
 import { Iframe, News, ShowMoreBtn, Wrapper } from "./styled";
-import { Button, ButtonGroup } from "@chakra-ui/button";
+import { ButtonGroup } from "@chakra-ui/button";
 import { MobileBaner } from "../mobileBaner";
+import { apiLink, apiToken, request } from "../../constans/graphql";
 
 export const ApiNews = () => {
   const [apiDataNews, setApiDataNews] = useState([]);
   const [pageNumber, setPageNumber] = useState(3);
 
-  const token = "4ae5a61b1ff196a96d8e8ea08d3d0e";
-
   useEffect(() => {
-    fetch("https://graphql.datocms.com/", {
+    fetch(apiLink, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${apiToken}`,
       },
       body: JSON.stringify({
-        query: ` {
-          allImgs {
-            id
-            _firstPublishedAt
-            _createdAt
-            short
-            opis
-            _seoMetaTags {
-              attributes
-            }
-          }
-          _allImgsMeta {
-            count
-          }
-        }
-      `,
+        query: request,
       }),
     })
       .then((res) => res.json())

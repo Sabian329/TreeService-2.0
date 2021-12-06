@@ -5,6 +5,7 @@ export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: ;
 `;
 export const Article = styled.article`
   display: flex;

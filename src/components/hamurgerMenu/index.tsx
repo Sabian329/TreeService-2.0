@@ -3,36 +3,11 @@ import { Spin as SpinIcon } from "hamburger-react";
 import { Blur, IconWrapper, Motion, Navfoot, Wrapper } from "./styled";
 import { NavBar } from "../navBar";
 import { Colors } from "../../theme/Colors";
+import { VariantsNavigation } from "../../constans/animationsVariants";
+import { VariantsBlur } from "../../constans/animationsVariants";
 
 export const HamburgerMenu = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
-
-  const VariantsNavigation = {
-    close: {
-      x: 300,
-      opacity: 1,
-    },
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-      },
-    },
-  };
-  const VariantsBlur = {
-    close: {
-      opacity: 1,
-      display: "none",
-    },
-    open: {
-      display: "block",
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
 
   return (
     <>

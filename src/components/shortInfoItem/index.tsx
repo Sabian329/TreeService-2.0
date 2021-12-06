@@ -5,18 +5,9 @@ import { Button } from "@chakra-ui/button";
 import { Collapse } from "@chakra-ui/transition";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
+import { IshortInfo } from "../../constans/interfaces";
 
-export const ShortInfoItem = ({
-  title,
-  content,
-  photo,
-  color,
-}: {
-  photo: string;
-  title: string;
-  content: string;
-  color: string;
-}) => {
+export const ShortInfoItem = ({ title, content, photo }: IshortInfo) => {
   const [isVisible, setVisible] = useState(false);
 
   return (

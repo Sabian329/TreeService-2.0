@@ -18,7 +18,7 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
   display: flex;
   @media ${device.mobileLL} {
     flex-direction: column;
