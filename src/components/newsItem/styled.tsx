@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   padding: 1rem;
   border-radius: 10px;
   width: 27rem;
-  min-height: 23rem;
+  min-height: 25rem;
   height: max-content;
   color: white;
   position: relative;
