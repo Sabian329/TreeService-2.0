@@ -47,12 +47,12 @@ You can run this project by.
    npm start
    ```
 
-[stars-shield]: https://img.shields.io/github/stars/pislagz/manycoins.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/sabian329/treeservice-2.0.svg?style=for-the-badge
 [stars-url]: https://github.com/Sabian329/TreeService-2.0/stargazers
-[issues-shield]: https://img.shields.io/github/issues/pislagz/manycoins.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/sabian329/treeservice-2.0.svg?style=for-the-badge
 [issues-url]: https://github.com/Sabian329/TreeService-2.0/issues
-[license-shield]: https://img.shields.io/github/license/pislagz/manycoins?style=for-the-badge
-[license-url]:https://github.com/Sabian329/sabian/blob/main/MIT.md
+[license-shield]: https://img.shields.io/github/license/sabian329/treeservice-2.0?style=for-the-badge
+[license-url]:https://github.com/Sabian329/TreeService-2.0/blob/main/LICENSE.md
 [react-shield]: https://img.shields.io/static/v1?label=&message=React&color=gray&style=for-the-badge&logo=react
 [react-url]: https://reactjs.org
 [sc-shield]: https://img.shields.io/static/v1?label=&message=styled-components&color=2b2b2b&style=for-the-badge&logo=styledcomponents
