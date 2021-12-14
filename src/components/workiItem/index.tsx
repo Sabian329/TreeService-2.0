@@ -13,16 +13,9 @@ import {
 } from "./styled";
 import { Modal, ModalOverlay, ModalCloseButton } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/hooks";
+import { IWorkItem } from "../../constans/interfaces";
 
-export const WorkItem = ({
-  title,
-  content,
-  photo,
-}: {
-  title: string;
-  content: string;
-  photo: string;
-}) => {
+export const WorkItem = ({ title, content, photo }: IWorkItem) => {
   const [isVisible, setVisible] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (

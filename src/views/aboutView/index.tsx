@@ -1,6 +1,6 @@
+import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
 import { MobileBaner } from "../../components/mobileBaner";
 import { WhoAreWrapper } from "../../components/whoAreWrapper";
 import { device } from "../../theme/MediaQueries";

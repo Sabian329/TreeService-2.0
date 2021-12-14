@@ -1,15 +1,15 @@
 import React from "react";
+import { NavBarRoutes } from "../../constans/navBarRoutes";
 import { StyledLink, Wrapper } from "./styled";
 
 export const NavBar = () => {
   return (
     <Wrapper>
-      <StyledLink to="/">Strona główna</StyledLink>
-      <StyledLink to="/about">O nas</StyledLink>
-      <StyledLink to="/uslugi">Usługi</StyledLink>
-      <StyledLink to="/aktualnosci">Aktualności</StyledLink>
-      <StyledLink to="/partnerzy">Partnerzy</StyledLink>
-      <StyledLink to="/kontakt">Kontakt</StyledLink>
+      {NavBarRoutes.map(({ name, route }: { name: string; route: string }) => (
+        <StyledLink key={name} to={route}>
+          {name}
+        </StyledLink>
+      ))}
     </Wrapper>
   );
 };

@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import React, { useEffect } from "react";
+import styled from "@emotion/styled";
 import { ContactWrapper } from "../../components/contactWrapper";
 import { device } from "../../theme/MediaQueries";
 

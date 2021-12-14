@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import React, { useEffect } from "react";
+import styled from "@emotion/styled";
 import { MobileBaner } from "../../components/mobileBaner";
 import { PartnerWrapper } from "../../components/partnerWrapper";
 import { device } from "../../theme/MediaQueries";

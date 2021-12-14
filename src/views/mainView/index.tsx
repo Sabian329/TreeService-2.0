@@ -1,6 +1,6 @@
+import React, { useEffect } from "react";
 import { Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
 import { ShortInfoWrapper } from "../../components/shortInfoWrapper";
 import { SlideShow } from "../../components/slideShow";
 import { Wrapper } from "./styled";

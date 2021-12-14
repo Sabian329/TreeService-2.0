@@ -13,21 +13,9 @@ import {
 } from "./styled";
 import { Modal, ModalOverlay, ModalCloseButton } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/hooks";
+import { INewsItem } from "../../constans/interfaces";
 
-export const NewsItem = ({
-  short,
-  opis,
-  _seoMetaTags,
-}: {
-  short: string;
-  opis: string;
-  _seoMetaTags: [
-    { atributes: { content: string } },
-    { atributes: { content: string } },
-    { atributes: { content: string } },
-    { attributes: { property: string; content: string } }
-  ];
-}) => {
+export const NewsItem = ({ short, opis, _seoMetaTags }: INewsItem) => {
   const photo = _seoMetaTags[3].attributes.content;
 
   const [isVisible, setVisible] = useState(false);

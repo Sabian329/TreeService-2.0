@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Footer } from "./components/footer/index";
 import { Menu } from "./components/menu/index";
 import { AboutView } from "./views/aboutView/index";
@@ -10,24 +10,7 @@ import { NewsView } from "./views/newsView/index";
 import { PartnersView } from "./views/partnersView/index";
 import { WorkView } from "./views/workView/index";
 import styled from "@emotion/styled";
-
-const overrides = extendTheme({
-  styles: {
-    global: (props: {
-      html: { width: string };
-      body: { width: string; fontFamily: string; bg: string };
-    }) => ({
-      html: {
-        width: "100%",
-      },
-      body: {
-        width: "100%",
-        fontFamily: "body",
-        bg: "#000000",
-      },
-    }),
-  },
-});
+import { overrides } from "./theme/ChakraTheme";
 
 export const App = () => {
   return (
